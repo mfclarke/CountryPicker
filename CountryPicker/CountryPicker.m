@@ -55,7 +55,7 @@
 @implementation CountryPicker
 
 // delegate doesn't use _ prefix to avoid name clash with superclass
-@synthesize delegate, labelFont = _labelFont;
+@synthesize delegate, labelFont = _labelFont, textColor = _textColor;
 
 + (NSArray *)countryNames
 {
@@ -212,6 +212,12 @@
     [self reloadComponent:0];
 }
 
+- (void)setTextColor:(UIColor *)textColor
+{
+    _textColor = textColor;
+    [self reloadComponent:0];
+}
+
 #pragma mark -
 #pragma mark UIPicker
 
@@ -234,6 +240,9 @@
         
         UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(35, 3, 245, 24)];
         label.backgroundColor = [UIColor clearColor];
+        if (self.textColor) {
+            label.textColor = self.textColor;
+        }
         label.tag = 1;
         if (self.labelFont)
         {

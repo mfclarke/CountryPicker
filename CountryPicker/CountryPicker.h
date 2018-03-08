@@ -89,6 +89,9 @@
 /// The font used by the labels in the picker. Set this to change the font.
 @property (nonatomic, copy) UIFont *labelFont;
 
+/// The color used for the labels in the picker.
+@property (nonatomic, copy) UIColor *textColor;
+
 /// These method allows you to set the current country code.
 /// It works exactly like the equivalent property setter, but has an optional
 /// animated parameter to make the picker scroll smoothly to the selected country.
